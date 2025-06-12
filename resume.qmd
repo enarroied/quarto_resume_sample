@@ -1,0 +1,122 @@
+---
+toc: false
+format:
+  html:
+    css: css/quarto_style.css
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+```{python}
+#| echo: false
+
+import pandas as pd
+from great_tables import GT
+from resume_functions.resume_functions import create_star_rating
+
+```
+<!-- :::{.column-body-outset} -->
+
+::: {.columns}
+
+::: {.column .side-column width="35%"}
+# Marcus Tabulae Pivotus
+
+![](./data/logo.png)
+
+## Roman Analyst and Philosopher
+
+🏠 Rome, Roman Empire  
+☎️ +I IV XII VIII II  
+📧 marcustabulaepivotus@romanmail.com  
+<i class="fa-brands fa-linkedin-in"></i> [LinkedIn]()    
+<i class="fa-brands fa-github"></i> [GitHub]()  
+🌐 [marcustabulaepivotus.com]()  
+
+## About Me
+Roman philosopher whose passion lies in the elegant dance of data and the divine art of the pivot table. I bring order, clarity, and a touch of sardonic wit to the chaotic world of information. If you seek a mind that can both contemplate the cosmos and meticulously sort your chariot race results, look no further. I am the emperor of efficiency and the oracle of organization.
+
+```{python}
+#| echo: false
+##### Skills ####
+df_skills = pd.read_csv("./data/skills.csv")
+df_skills["stars"] = df_skills["mark"].apply(create_star_rating)
+
+GT(
+    df_skills[["skill_type", "skill", "description", "stars"]],
+    rowname_col="skill",
+    groupname_col="skill_type",
+).tab_header("Skills").cols_label(skill="", description="", stars="").cols_width(
+    cases={"skill": "10%", "description": "50%", "stars": "20%"}
+)
+```
+
+```{python}
+#| echo: false
+
+df_languages = pd.read_csv("./data/languages.csv")
+df_languages["stars"] = df_languages["mark"].apply(create_star_rating)
+
+GT(df_languages[["Language", "Level", "stars"]]).tab_header("Languages").cols_label(
+    Language="", Level="", stars=""
+).cols_width(
+    cases={"Language": "20%", "Level": "20%", "stars": "10%"}
+)
+```
+:::
+::: {.column .main-section width="65%"}
+
+## 💡 Projects and Publications
+
+**The Categorization of Coliseums: A Comprehensive Database of Gladiatorial Engagements | 30 BCE - Present | Lead Scriptor & Data Augur**
+
+Developed and maintained a comprehensive scroll-based database of gladiatorial contests across the Roman Empire, meticulously detailing combatants, outcomes, beast encounters, and crowd sentiment (as interpreted from audible cheers and jeers).
+Pioneered a system of "scroll-slicing" and "wax-tablet pivoting" to generate daily, weekly, and annual summaries of arena performance, identifying emerging trends in combat styles and popular beast pairings.
+
+
+**45 BCE - 25 BCE | Decoding the Oracles of Delphi: Prophetic Quantitative Analysis**  
+Abacus-Based Regressions, Pattern Seeking, Metaphysical Statistics. Transcribed and analyzed over 1,000 Delphic pronouncements, classifying them by theme and predictive accuracy.
+
+## 🛠️ Experience
+
+**20 CE - Present | Senior Data Archivist | Imperial Scriptorium, Rome**  
+
+Spearheaded the standardization of historical records, converting diverse scroll formats into coherent, searchable datasets. Implemented papyrus-based indexing systems to streamline access to imperial decrees and census figures. Optimized the flow of critical information from distant provinces to the capital, ensuring timely strategic decisions.
+
+**5 BCE - 15 CE | Aquaeductus Efficiency Expert | Roman Public Works Department**  
+
+Analyzed water flow dynamics across major aqueduct systems, identifying bottlenecks and optimizing resource distribution. Developed stone tablet schematics for improved maintenance schedules, reducing repair times by 30%. Consulted on new construction projects, ensuring optimal hydrological planning for urban water supply.
+
+## 🎓 Education
+
+**15 CE | Certified Imperial Data Harmonizer (CIDH) | Roman Guild of Scribes and Numerologists**  
+License number LXXVII. 
+
+**25 BCE | Lyceum of Athens (via Correspondence Scrolls) | Doctorate in Metaphysical Data Structures**  
+
+Rigorously debated the philosophical implications of logical fallacies and their impact on data integrity.
+Thesis: "The Optimal Categorization of the Cosmos: A Hierarchical Approach to Universal Understanding."
+
+**35 BCE | Imperial School of Rhetoric & Numerology, Rome | Master of Abacus Arts & Persuasive Logic**
+
+Mastered the art of rapid calculation and complex numerical analysis using the abacus and counting boards.
+Specialized in constructing logically impeccable arguments for the efficient organization of public records and imperial decrees.
+
+
+**40 BCE | Private Tutelage under Senator Quintus Discipulus | Foundation in Stoic Data Management**
+
+Grounded in the stoic principles of order, self-discipline, and the systematic reduction of chaotic information.
+Developed foundational skills in papyrus inscription, scroll indexing, and the early application of data organization to private finances.
+
+:::
+
+:::
+
+
+
+
+
+
+
+
+<!-- ::: -->

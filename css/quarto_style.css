@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans&display=swap');
+
+
+body {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+table {
+  font-size: 8px!important;
+  width: auto !important;
+  margin: 2px 0 !important;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 3px 6px !important; 
+  border: 1px solid #ddd;
+}
+
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.2em; }
+
+
+img, .quarto-figure img {
+  width: 50% !important;
+  height: auto !important;
+  display: block;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.side-column {
+  background-color: #eee; 
+  border-radius: 5px;
+  padding:5px;
+}
+.main-section{
+  padding:5px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1px 0 !important;
+    color: #000658;
+    letter-spacing: 0.05em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+}
