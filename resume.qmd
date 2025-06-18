@@ -4,8 +4,11 @@ format:
   html:
     css: css/quarto_style.css
     include-in-header:
-      text: |
+      text:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+execute:
+  post-render:
+    - command: weasyprint resume.html resume.pdf -s css/quarto_style.css 
 ---
 ```{python}
 #| echo: false
@@ -13,9 +16,7 @@ format:
 import pandas as pd
 from great_tables import GT
 from resume_functions.resume_functions import create_star_rating
-
 ```
-<!-- :::{.column-body-outset} -->
 
 ::: {.columns}
 
@@ -38,7 +39,6 @@ Roman philosopher whose passion lies in the elegant dance of data and the divine
 
 ```{python}
 #| echo: false
-##### Skills ####
 df_skills = pd.read_csv("./data/skills.csv")
 df_skills["stars"] = df_skills["mark"].apply(create_star_rating)
 
@@ -68,8 +68,7 @@ GT(df_languages[["Language", "Level", "stars"]]).tab_header("Languages").cols_la
 
 ## 💡 Projects and Publications
 
-**The Categorization of Coliseums: A Comprehensive Database of Gladiatorial Engagements | 30 BCE - Present | Lead Scriptor & Data Augur**
-
+**The Categorization of Coliseums: A Comprehensive Database of Gladiatorial Engagements | 30 BCE - Present | Lead Scriptor & Data Augur**  
 Developed and maintained a comprehensive scroll-based database of gladiatorial contests across the Roman Empire, meticulously detailing combatants, outcomes, beast encounters, and crowd sentiment (as interpreted from audible cheers and jeers).
 Pioneered a system of "scroll-slicing" and "wax-tablet pivoting" to generate daily, weekly, and annual summaries of arena performance, identifying emerging trends in combat styles and popular beast pairings.
 
@@ -80,11 +79,9 @@ Abacus-Based Regressions, Pattern Seeking, Metaphysical Statistics. Transcribed 
 ## 🛠️ Experience
 
 **20 CE - Present | Senior Data Archivist | Imperial Scriptorium, Rome**  
-
 Spearheaded the standardization of historical records, converting diverse scroll formats into coherent, searchable datasets. Implemented papyrus-based indexing systems to streamline access to imperial decrees and census figures. Optimized the flow of critical information from distant provinces to the capital, ensuring timely strategic decisions.
 
 **5 BCE - 15 CE | Aquaeductus Efficiency Expert | Roman Public Works Department**  
-
 Analyzed water flow dynamics across major aqueduct systems, identifying bottlenecks and optimizing resource distribution. Developed stone tablet schematics for improved maintenance schedules, reducing repair times by 30%. Consulted on new construction projects, ensuring optimal hydrological planning for urban water supply.
 
 ## 🎓 Education
@@ -93,30 +90,17 @@ Analyzed water flow dynamics across major aqueduct systems, identifying bottlene
 License number LXXVII. 
 
 **25 BCE | Lyceum of Athens (via Correspondence Scrolls) | Doctorate in Metaphysical Data Structures**  
-
 Rigorously debated the philosophical implications of logical fallacies and their impact on data integrity.
 Thesis: "The Optimal Categorization of the Cosmos: A Hierarchical Approach to Universal Understanding."
 
-**35 BCE | Imperial School of Rhetoric & Numerology, Rome | Master of Abacus Arts & Persuasive Logic**
-
+**35 BCE | Imperial School of Rhetoric & Numerology, Rome | Master of Abacus Arts & Persuasive Logic**  
 Mastered the art of rapid calculation and complex numerical analysis using the abacus and counting boards.
 Specialized in constructing logically impeccable arguments for the efficient organization of public records and imperial decrees.
 
 
-**40 BCE | Private Tutelage under Senator Quintus Discipulus | Foundation in Stoic Data Management**
-
+**40 BCE | Private Tutelage under Senator Quintus Discipulus | Foundation in Stoic Data Management**  
 Grounded in the stoic principles of order, self-discipline, and the systematic reduction of chaotic information.
 Developed foundational skills in papyrus inscription, scroll indexing, and the early application of data organization to private finances.
 
 :::
-
 :::
-
-
-
-
-
-
-
-
-<!-- ::: -->
