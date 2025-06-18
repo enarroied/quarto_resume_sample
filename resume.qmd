@@ -6,9 +6,6 @@ format:
     include-in-header:
       text:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-execute:
-  post-render:
-    - command: weasyprint resume.html resume.pdf -s css/quarto_style.css 
 ---
 ```{python}
 #| echo: false
