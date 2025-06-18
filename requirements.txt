@@ -1,0 +1,4 @@
+great-tables==0.17.0
+jupyter==1.1.1
+pandas==2.2.3
+weasyprint==65.1
