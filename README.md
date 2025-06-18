@@ -24,6 +24,8 @@ weasyprint resume.html resume.pdf -s css/report_style.css
 
 Quarto allows to generate PDF reports directly. The "problem" of this approach is that it uses LaTeX under the hood. If your resume needs to look academic, you should *probably* use that option, and look at [projects like this one](https://github.com/schochastics/quarto-cv), or [plenty of others](https://github.com/mcanouil/awesome-quarto).
 
+While Quarto technically supports generating PDFs using WeasyPrint directly via `format: pdf` and `pdf-engine: weasyprint`, in practice this method can be unpredictable or incomplete.
+
 The approach I took has the following advantages (although this may be subjective):
 
 * It generates an HTML file (the HTML output deserves bigger fonts), it's an extra output we can use for a blog for example
